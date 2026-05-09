@@ -3,10 +3,13 @@
 """
 import json
 import re
+import os
 from pathlib import Path
 
-# 数据文件路径
-TRAVEL_TEXTS_PATH = Path("c:/Users/葛志峰/CodeBuddy/20260429144011/travel_data/travel_texts.txt")
+# ===================== 修复：自动获取项目路径，适配公网部署 =====================
+# 获取当前文件所在目录
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TRAVEL_TEXTS_PATH = Path(BASE_DIR) / "travel_data" / "travel_texts.txt"
 
 class QAIndex:
     """优化的问答索引"""
