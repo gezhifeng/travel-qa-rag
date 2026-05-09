@@ -2,21 +2,24 @@
 系统配置文件
 包含API配置、应用配置等
 """
-import os
 
 # ==================== 千问大模型API配置 ====================
 # 使用千问兼容的OpenAI接口
 QWEN_CONFIG = {
-    "api_key": os.getenv("QWEN_API_KEY", "sk-6937850a78b34ac5acb8bd6920bfd2d1"),
-    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "api_key": "sk-6937850a78b34ac5acb8bd6920bfd2d1",  # 您的API Key
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",  # 千问API地址
 }
 
 # 模型配置
 MODEL_CONFIG = {
-    "model": "qwen-plus",
-    "temperature": 0.7,
-    "max_tokens": 2000,
-    "top_p": 0.9,
+    "model": "qwen-plus",  # 使用通义千问Plus模型（效果好）
+    # 可选模型：
+    # - qwen-turbo: 速度快，成本低
+    # - qwen-plus: 效果平衡
+    # - qwen-max: 效果最好，成本高
+    "temperature": 0.7,  # 生成随机性（0-1，越高越随机）
+    "max_tokens": 2000,  # 最大生成token数
+    "top_p": 0.9,  # 采样策略
 }
 
 # ==================== 应用配置 ====================
